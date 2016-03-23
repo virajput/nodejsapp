@@ -4,7 +4,7 @@ var express = require('express'),
 
 var router = express.Router();
 
-var db_name = 'video';
+var db_name = 'moviedb';
 var mongodb_connection_string = 'mongodb://localhost:27017/' + db_name;
 
 //take advantage of openshift env vars when available:

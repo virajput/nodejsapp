@@ -47,7 +47,8 @@ MongoClient.connect(mongodb_connection_string, function(err, db) {
                 { 'title': title, 'year': year, 'imdb': imdb },
                 function (err, r) {
                     assert.equal(null, err);
- 					res.render('index',{});
+                    //res.render('index', {});
+                    res.redirect('/');
                 }
             );
         }

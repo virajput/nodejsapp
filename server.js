@@ -8,14 +8,14 @@ var app = require('./app');
 var http = require('http');
 
 //openshift deployment
-//var server_port = process.env.OPENSHIFT_NODEJS_PORT || '9001'
-var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'
+var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080;
+var ip = process.env.IP || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
 
 /**
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '9001');
+//var port = normalizePort(process.env.PORT || '9001');
 app.set('port', port);
 
 /**
@@ -28,8 +28,8 @@ var server = http.createServer(app);
  * Listen on provided port, on all network interfaces.
  */
 
-server.listen(port, server_ip_address, function () {
-  console.log( "Listening on " + server_ip_address + ", server_port " + port);
+server.listen(port, ip, function () {
+  console.log( "Server Listening on " + ip + ", port " + port);
 });
 
 //server.listen(server_port);

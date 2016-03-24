@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -53,19 +53,19 @@
 						<div class="form-group">
 							<label for="title" class="col-lg-2 control-label">Title</label>
 							<div class="col-lg-10">
-								<input type="text" class="form-control" id="title" name="title">
+                                <input type="text" class="form-control" id="title" name="title" maxlength="60">
 							</div>
 						</div>
 						<div class="form-group">
 						  <label for="year" class="col-lg-2 control-label">Year</label>
 						  <div class="col-lg-10">
-							<input type="text" class="form-control" id="year" name="year">
+                            <input type="text" class="form-control" id="year" name="year" maxlength="4">
 						  </div>
 						</div>
 						<div class="form-group">
 						  <label for="imdb" class="col-lg-2 control-label">IMDB</label>
 						  <div class="col-lg-10">
-							<input type="text" class="form-control" id="imdb" name="imdb">
+                            <input type="text" class="form-control" id="imdb" name="imdb" maxlength="15">
 						  </div>
 						</div>
 						<div class="form-group">
@@ -83,7 +83,6 @@
 						<th>Title</th>
 						<th>Year</th>
 						<th>IMDB</th>
-						<th>Review</th>
 					</tr>
 				</thead>
 			</table>
@@ -113,11 +112,7 @@
 			columns: [
             { data: "title" },
             { data: "year" },
-            { data: "imdb" },
-			{ data: null, render: function ( data, type, row ) {
-                // Combine the first and last names into a single table field
-                return 'http://www.imdb.com/title/'+data.imdb
-            }}
+            { data: "imdb" }
 			],
 			select: true,
 		});
